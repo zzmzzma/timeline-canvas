@@ -264,6 +264,8 @@ TimeSlider.prototype.mousewheelFunc = function(event){
  * @param {*} e 
  */
 TimeSlider.prototype.get_cursor_x_position =function(e) {
+    var bbox = this.canvas.getBoundingClientRect();  
+	return  Math.round((e.pageX- bbox.left )*(this.canvas.width / bbox.width)); 
     var posx = 0;
 
     if (! e) {
